@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAllWork, WorkCategory } from "../content";
+import { getAllWork } from "../content";
+import type { WorkCategory } from "../content";
 
 const CATEGORY_OPTIONS: (WorkCategory | "All")[] = [
   "All",

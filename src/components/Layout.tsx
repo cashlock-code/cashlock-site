@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Layout({ children }: PropsWithChildren) {

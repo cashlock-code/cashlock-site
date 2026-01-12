@@ -1,4 +1,4 @@
-import matter from "gray-matter";
+import fm from "front-matter";
 import { marked } from "marked";
 
 export type WorkCategory =
@@ -18,39 +18,44 @@ export type WorkItem = {
   tags: string[];
 };
 
-// Import every markdown file under src/content/work
-const mdModules = import.meta.glob("./content/work/**/*.md", {
+// Absolute path glob — reliable in Vite
+const mdModules = import.meta.glob("/src/content/work/**/*.md", {
   as: "raw",
   eager: true,
 }) as Record<string, string>;
 
 function slugFromPath(path: string) {
-  // ./content/work/product-launches/my-slug.md -> my-slug
-  const file = path.split("/").pop() ?? "";
-  return file.replace(/\.md$/, "");
+  return path.split("/").pop()!.replace(/\.md$/, "");
 }
+
+type FrontMatter = {
+  title?: string;
+  category?: WorkCategory;
+  date?: string;
+  summary?: string;
+  tags?: string[];
+};
 
 function parseAll(): Array<{ item: WorkItem; body: string }> {
   const parsed: Array<{ item: WorkItem; body: string }> = [];
 
   for (const [path, raw] of Object.entries(mdModules)) {
     const slug = slugFromPath(path);
-    const { data, content } = matter(raw);
+    const result = fm<FrontMatter>(raw);
 
-    // Minimal validation with sensible defaults
     const item: WorkItem = {
       slug,
-      title: String(data.title ?? slug),
-      category: data.category as WorkCategory,
-      date: String(data.date ?? "2000-01-01"),
-      summary: String(data.summary ?? ""),
-      tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
+      title: result.attributes.title ?? slug,
+      category: result.attributes.category ?? "Product Launches",
+      date: result.attributes.date ?? "2000-01-01",
+      summary: result.attributes.summary ?? "",
+      tags: result.attributes.tags ?? [],
     };
 
-    parsed.push({ item, body: content });
+    parsed.push({ item, body: result.body });
   }
 
-  // Sort newest first by date
+  // newest first
   parsed.sort((a, b) => (a.item.date < b.item.date ? 1 : -1));
   return parsed;
 }

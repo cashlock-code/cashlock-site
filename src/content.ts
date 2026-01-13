@@ -1,6 +1,10 @@
 import fm from "front-matter";
 import { marked } from "marked";
 
+/* =========================
+   Types
+========================= */
+
 export type WorkCategory =
   | "Success Stories"
   | "Product Launches"
@@ -9,6 +13,11 @@ export type WorkCategory =
   | "Go To Market"
   | "AI";
 
+export type Artifact = {
+  label: string;
+  url: string;
+};
+
 export type WorkItem = {
   slug: string;
   title: string;
@@ -16,17 +25,15 @@ export type WorkItem = {
   date: string; // YYYY-MM-DD
   summary: string;
   tags: string[];
+
+  // Optional polish fields
+  results?: string[];
+  artifacts?: Artifact[];
+
+  // New optional media fields
+  image?: string;   // "/work/foo.jpg" (from /public) or "https://..."
+  youtube?: string; // video id or URL
 };
-
-// Absolute path glob — reliable in Vite
-const mdModules = import.meta.glob("/src/content/work/**/*.md", {
-  as: "raw",
-  eager: true,
-}) as Record<string, string>;
-
-function slugFromPath(path: string) {
-  return path.split("/").pop()!.replace(/\.md$/, "");
-}
 
 type FrontMatter = {
   title?: string;
@@ -34,7 +41,28 @@ type FrontMatter = {
   date?: string;
   summary?: string;
   tags?: string[];
+  results?: string[];
+  artifacts?: Artifact[];
+  image?: string;
+  youtube?: string;
 };
+
+/* =========================
+   Markdown loader
+========================= */
+
+const mdModules = import.meta.glob("/src/content/work/**/*.md", {
+  as: "raw",
+  eager: true,
+}) as Record<string, string>;
+
+function slugFromPath(path: string): string {
+  return path.split("/").pop()!.replace(/\.md$/, "");
+}
+
+/* =========================
+   Parse + cache
+========================= */
 
 function parseAll(): Array<{ item: WorkItem; body: string }> {
   const parsed: Array<{ item: WorkItem; body: string }> = [];
@@ -49,18 +77,27 @@ function parseAll(): Array<{ item: WorkItem; body: string }> {
       category: result.attributes.category ?? "Product Launches",
       date: result.attributes.date ?? "2000-01-01",
       summary: result.attributes.summary ?? "",
-      tags: result.attributes.tags ?? [],
+      tags: Array.isArray(result.attributes.tags) ? result.attributes.tags : [],
+
+      results: Array.isArray(result.attributes.results) ? result.attributes.results : undefined,
+      artifacts: Array.isArray(result.attributes.artifacts) ? result.attributes.artifacts : undefined,
+
+      image: typeof result.attributes.image === "string" ? result.attributes.image : undefined,
+      youtube: typeof result.attributes.youtube === "string" ? result.attributes.youtube : undefined,
     };
 
     parsed.push({ item, body: result.body });
   }
 
-  // newest first
   parsed.sort((a, b) => (a.item.date < b.item.date ? 1 : -1));
   return parsed;
 }
 
 const CACHE = parseAll();
+
+/* =========================
+   Public API
+========================= */
 
 export function getAllWork(): WorkItem[] {
   return CACHE.map((x) => x.item);

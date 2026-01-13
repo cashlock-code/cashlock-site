@@ -7,6 +7,7 @@ export default function Layout({ children }: PropsWithChildren) {
       <div className="nav">
 <div className="brand">
   <div className="brand-title">Christian Ashlock</div>
+    <div className="brand-accent" />
   <div className="brand-subtitle">
     Product marketing leader | B2B, SaaS, ads & tech | Builds teams & brands
   </div>
@@ -31,10 +32,10 @@ export default function Layout({ children }: PropsWithChildren) {
 
       {children}
 
-      <div className="hr" />
-      <div className="p">
-        © {new Date().getFullYear()} Cashlock. Built with Vite + React, hosted on GitHub Pages.
-      </div>
+     <div className="footer-accent" />
+<div className="p">
+  © {new Date().getFullYear()} Christian Ashlock.
+</div>
     </div>
   );
 }

@@ -248,3 +248,41 @@ a:hover {
 .card .h2 {
   margin-bottom: 6px;
 }
+
+/* Brand accent rule under name */
+.brand-accent {
+  height: 3px;
+  width: 44px;
+  margin-top: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-leadership),
+    var(--accent-growth),
+    var(--accent-creative)
+  );
+  border-radius: 2px;
+}
+
+/* Footer accent divider */
+.footer-accent {
+  height: 1px;
+  width: 100%;
+  margin: 32px 0 16px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-leadership),
+    var(--accent-growth),
+    var(--accent-creative),
+    transparent
+  );
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--accent-leadership);
+  box-shadow: 0 0 0 2px rgba(91, 108, 255, 0.12);
+}
+
+

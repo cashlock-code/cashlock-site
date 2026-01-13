@@ -29,37 +29,38 @@ export default function About() {
 
   return (
     <>
+      {/* Top section (moved from Home) */}
       <div className="card" style={{ background: "#fff" }}>
         <div className="kicker">About</div>
-        <h1 className="h1">Product marketing leader</h1>
-
-        <p className="p">
-          I help teams translate complex technology into clear positioning, compelling narratives, and
-          GTM execution that drives adoption. My work spans B2B SaaS, ads, analytics, and developer
-          platforms, partnering closely with product, sales, and customer teams.
+  <p className="p" style={{ maxWidth: 900, marginBottom: 22, marginTop: 15 }}>
+          Marketing leader with a 20+ year track record of growing revenue and
+          building technology brands, including 13+ years as a people manager.
+          Passionate about taking complex technology and crafting simple and
+          compelling stories.
         </p>
 
-        <div className="grid" style={{ marginTop: 14 }}>
-          <div className="card third" style={{ background: "#fff" }}>
-            <div className="h2">Positioning</div>
+        <div className="grid">
+          <div className="card third accent-leadership" style={{ background: "#fff" }}>
+            <div className="h2">Leadership</div>
             <p className="p">
-              Category strategy, messaging, narrative, and competitive framing to make products easy to
-              understand and easy to buy.
+              Builds high-performing global teams to scale impact from large enterprises
+              to millions of SMBs.
             </p>
           </div>
 
-          <div className="card third" style={{ background: "#fff" }}>
-            <div className="h2">Go-to-market</div>
+          <div className="card third accent-growth" style={{ background: "#fff" }}>
+            <div className="h2">Growth</div>
             <p className="p">
-              Launch strategy, enablement, and cross-functional alignment across product, sales, and
-              customer success.
+              Drives business growth by connecting marketing strategy to top-level company
+              objectives.
             </p>
           </div>
 
-          <div className="card third" style={{ background: "#fff" }}>
-            <div className="h2">Measurement</div>
+          <div className="card third accent-creative" style={{ background: "#fff" }}>
+            <div className="h2">Creative</div>
             <p className="p">
-              Outcome-driven planning and instrumentation so teams can prove impact and iterate quickly.
+              Creates polished, impactful marketing and thought leadership that resonates
+              with customers.
             </p>
           </div>
         </div>
@@ -69,9 +70,6 @@ export default function About() {
       <div className="card" style={{ marginTop: 14, background: "#fff" }}>
         <div className="kicker">Fun</div>
         <div className="h2">Outside of work</div>
-        <p className="p">
-          A few snapshots from life outside product marketing.
-        </p>
 
         <div
           className="grid"
@@ -81,28 +79,39 @@ export default function About() {
           }}
         >
           {funImages.map((img) => (
-            <div
-              key={img.src}
-              className="card"
-              style={{
-                padding: 0,
-                overflow: "hidden",
-                background: "#fff",
-              }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  height: 220,
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
-            </div>
-          ))}
+  <div
+    key={img.src}
+    style={{
+      border: "1px solid var(--border)",
+      borderRadius: 16,
+      overflow: "hidden",
+      background: "#fff",
+    }}
+  >
+    <div
+      style={{
+        aspectRatio: "16 / 10", // less vertical crop than a fixed height
+        width: "100%",
+        position: "relative",
+      }}
+    >
+      <img
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+    </div>
+  </div>
+))}
+
         </div>
       </div>
     </>

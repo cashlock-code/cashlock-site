@@ -19,10 +19,13 @@ export default function WorkIndex() {
 
   const items = useMemo(() => {
     const all = getAllWork();
+
     return all.filter((w) => {
       const matchesCat = cat === "All" ? true : w.category === cat;
+
       const haystack = `${w.title} ${w.summary} ${w.category} ${w.tags.join(" ")}`.toLowerCase();
       const matchesQ = q.trim() ? haystack.includes(q.trim().toLowerCase()) : true;
+
       return matchesCat && matchesQ;
     });
   }, [q, cat]);
@@ -34,19 +37,28 @@ export default function WorkIndex() {
           <div className="kicker">Portfolio</div>
           <h1 className="h1">Work</h1>
           <p className="p">
-            Filter by category or search. Add new entries by dropping a Markdown file into src/content/work.
+            Browse and filter selected projects
           </p>
         </div>
       </div>
 
-      <div className="card">
+      {/* Search / filter bar (adds color similar to Contact) */}
+      <div
+        className="card"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(91,108,255,0.06), rgba(63,175,143,0.05), rgba(155,126,220,0.06))",
+          border: "1px solid var(--border)",
+        }}
+      >
         <div className="row">
           <input
             className="input"
-            placeholder="Search (e.g., launch, enablement, metrics)"
+            placeholder="Search (e.g., launch, enablement, measurement)"
             value={q}
             onChange={(e) => setQ(e.target.value)}
           />
+
           <select className="select" value={cat} onChange={(e) => setCat(e.target.value as any)}>
             {CATEGORY_OPTIONS.map((c) => (
               <option value={c} key={c}>
@@ -54,6 +66,7 @@ export default function WorkIndex() {
               </option>
             ))}
           </select>
+
           <button className="btn" onClick={() => (setQ(""), setCat("All"))}>
             Clear
           </button>
@@ -66,7 +79,7 @@ export default function WorkIndex() {
         ))}
 
         {items.length === 0 ? (
-          <div className="card">
+          <div className="card" style={{ background: "#fff" }}>
             <div className="h2">No results</div>
             <p className="p">Try a different search term or category.</p>
           </div>

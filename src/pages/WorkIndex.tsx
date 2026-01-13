@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { getAllWork } from "../content";
 import type { WorkCategory } from "../content";
+import WorkCard from "../components/WorkCard";
 
 const CATEGORY_OPTIONS: (WorkCategory | "All")[] = [
   "All",
@@ -33,7 +33,9 @@ export default function WorkIndex() {
         <div>
           <div className="kicker">Portfolio</div>
           <h1 className="h1">Work</h1>
-          <p className="p">Filter by category or search. Add new entries by dropping a Markdown file into src/content/work.</p>
+          <p className="p">
+            Filter by category or search. Add new entries by dropping a Markdown file into src/content/work.
+          </p>
         </div>
       </div>
 
@@ -60,27 +62,15 @@ export default function WorkIndex() {
 
       <div className="grid" style={{ marginTop: 14 }}>
         {items.map((w) => (
-          <div className="card half" key={w.slug} style={{ background: "#fff" }}>
-            <div className="kicker">{w.category}</div>
-            <div className="h2" style={{ marginTop: 6 }}>
-              <Link to={`/work/${w.slug}`}>{w.title}</Link>
-            </div>
-            <p className="p">{w.summary}</p>
-            <div className="badge-row">
-              {w.tags.map((t) => (
-                <span className="badge" key={t}>
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
+          <WorkCard key={w.slug} w={w} />
         ))}
-        {items.length === 0 && (
+
+        {items.length === 0 ? (
           <div className="card">
             <div className="h2">No results</div>
             <p className="p">Try a different search term or category.</p>
           </div>
-        )}
+        ) : null}
       </div>
     </>
   );

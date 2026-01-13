@@ -4,6 +4,7 @@ category: "AI"
 date: "2025-01-01"
 summary: "Fast and easy guitar scale generator"
 tags: ["AI", "Experiment", "Prototyping", "CodePen"]
+featured: true
 results:
   - "Add a measurable outcome"
 artifacts:

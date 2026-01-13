@@ -1,10 +1,10 @@
 ---
-title: "Privacy & Measurement at Google Marketing Live 2022"
+title: "Privacy & Measurement at Google Marketing Live"
 category: "Keynotes"
 date: "2025-01-01"
 summary: "Keynote segment focused on privacy-safe measurement and the future of ads measurement."
 tags: ["Keynote", "Privacy", "Measurement", "Google Marketing Live"]
-image: "https://img.youtube.com/vi/tayMq0eRtpI/hqdefault.jpg"
+feature: true
 youtube: "tayMq0eRtpI"
 results:
   - "Add a measurable outcome"

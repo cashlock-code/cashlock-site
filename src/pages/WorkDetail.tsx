@@ -100,7 +100,6 @@ export default function WorkDetail() {
           <div className="grid">
             {item.image && isSafeUrl(item.image) ? (
               <div className="card half" style={{ background: "#fff" }}>
-                <div className="h2">Image</div>
                 <div style={{ marginTop: 10 }}>
                   <img
                     src={item.image}
@@ -121,9 +120,6 @@ export default function WorkDetail() {
             {ytId ? (
               <div className="card half" style={{ background: "#fff" }}>
                 <div className="h2">Video</div>
-                <p className="p" style={{ marginBottom: 10 }}>
-                  Embedded YouTube video.
-                </p>
                 <div
                   style={{
                     position: "relative",
@@ -188,9 +184,6 @@ export default function WorkDetail() {
           {item.artifacts?.length ? (
             <div className="card half" style={{ background: "#fff" }}>
               <div className="h2">Artifacts</div>
-              <p className="p" style={{ marginBottom: 10 }}>
-                Representative deliverables (where shareable).
-              </p>
               <div className="row">
                 {item.artifacts
                   .filter((a) => a?.label && a?.url && isSafeUrl(a.url))

@@ -9,16 +9,5 @@ results:
   - "Add a measurable outcome"
 artifacts:
   - label: "Read more"
-    url: "https://www.branch.io"
+    url: "https://www.branch.io/resources/blog/how-to-prepare-for-the-upcoming-google-analytics-4-migration/"
 ---
-## Overview
-Partnered with product & support to help Branch customers ensure their integration with Google Analytics would continue to work with new versions of the product
-
-## My role
-- Add your role, scope, and cross-functional partners.
-
-## What I shipped
-- Add the key deliverables: narrative, messaging, enablement, launch plan, etc.
-
-## Results
-- Add 1–3 measurable outcomes when available.

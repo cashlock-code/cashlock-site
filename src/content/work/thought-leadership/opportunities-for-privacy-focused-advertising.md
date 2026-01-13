@@ -4,20 +4,13 @@ category: "Thought Leadership"
 date: "2025-01-01"
 summary: "In new research from Forrester Consulting, commissioned by Google, marketers and media agency decision makers identify key challenges and opportunities for the next wave of demand-side-platforms."
 tags: ["Thought leadership", "Privacy", "Advertising", "Research"]
+image: "/public/tl-dsp.png"
 results:
   - "Add a measurable outcome"
 artifacts:
-  - label: "Read more"
-    url: "https://marketingplatform.google.com"
+  - label: "Read"
+    url: "https://marketingplatform.google.com/about/resources/new-opportunities-in-programmatic-advertising-for-privacy-focused-marketers/"
+  - label: "Download research"
+    url: "https://services.google.com/fh/files/misc/google_forrester_programmatic_advertisting.pdf"
 ---
-## Overview
-In new research from Forrester Consulting, commissioned by Google, marketers and media agency decision makers identify key challenges and opportunities for the next wave of demand-side-platforms.
 
-## My role
-- Add your role, scope, and cross-functional partners.
-
-## What I shipped
-- Add the key deliverables: narrative, messaging, enablement, launch plan, etc.
-
-## Results
-- Add 1–3 measurable outcomes when available.

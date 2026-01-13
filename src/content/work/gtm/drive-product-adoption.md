@@ -9,16 +9,5 @@ results:
   - "Add a measurable outcome"
 artifacts:
   - label: "Read more"
-    url: "https://blog.google"
+    url: "https://blog.google/products/marketingplatform/360/start-year-strong-google-marketing-platform/"
 ---
-## Overview
-Used the new year as a moment to re-engage customers for conversations with sales
-
-## My role
-- Add your role, scope, and cross-functional partners.
-
-## What I shipped
-- Add the key deliverables: narrative, messaging, enablement, launch plan, etc.
-
-## Results
-- Add 1–3 measurable outcomes when available.

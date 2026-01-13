@@ -78,7 +78,7 @@ export default function Contact() {
           </a>
 
           <div className="p" style={{ marginTop: 10 }}>
-            Best for speaking opportunities, consulting, collaborations, and product marketing leadership roles.
+            Best for speaking opportunities, consulting, and collaborations.
           </div>
         </div>
 

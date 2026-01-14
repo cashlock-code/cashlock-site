@@ -1,22 +1,13 @@
 ---
 title: "Measurement at Google Marketing Live"
 category: "Keynotes"
-date: "2025-01-01"
+date: "2021-07-11"
 summary: "Keynote segment covering measurement strategy and privacy-driven changes in the ads ecosystem."
 tags: ["Keynote", "Measurement", "Ads", "Google Marketing Live"]
 youtube: "AFBNBoU28O4"
 results:
-  - "Add a measurable outcome"
+  - "Announced new audience and measurement products"
+  - "Set thought leadership narrative for the year"
 artifacts: []
 ---
-## Overview
-Keynote segment covering measurement strategy and privacy-driven changes in the ads ecosystem.
 
-## My role
-- Add your role, scope, and cross-functional partners.
-
-## What I shipped
-- Add the key deliverables: narrative, messaging, enablement, launch plan, etc.
-
-## Results
-- Add 1–3 measurable outcomes when available.

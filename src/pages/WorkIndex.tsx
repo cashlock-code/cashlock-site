@@ -10,7 +10,7 @@ const CATEGORY_OPTIONS: (WorkCategory | "All")[] = [
   "Keynotes",
   "Thought Leadership",
   "Go To Market",
-  "Projects",
+  "Projects"
 ];
 
 export default function WorkIndex() {

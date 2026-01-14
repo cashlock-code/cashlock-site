@@ -1,9 +1,9 @@
 ---
 title: "Opportunities for privacy focused advertising"
 category: "Thought Leadership"
-date: "2025-01-01"
+date: "2022-01-01"
 summary: "In new research from Forrester Consulting, commissioned by Google, marketers and media agency decision makers identify key challenges and opportunities for the next wave of demand-side-platforms."
-tags: ["Thought leadership", "Privacy", "Advertising", "Research"]
+tags: ["Google", "Privacy", "Advertising", "Research"]
 image: "/public/tl-dsp.png"
 results:
   - "Add a measurable outcome"

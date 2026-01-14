@@ -1,9 +1,9 @@
 ---
 title: "The future of ads measurement"
 category: "Thought Leadership"
-date: "2025-01-01"
+date: "2021-01-01"
 summary: "More than ever before, our industry needs innovation and collaboration to protect the tools and insights that businesses need to grow."
-tags: ["Thought leadership", "Measurement", "Ads", "Innovation"]
+tags: ["Thought leadership", "Measurement", "Ads", "Google"]
 image: "/twg.png"
 
 results:

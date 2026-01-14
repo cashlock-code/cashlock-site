@@ -11,7 +11,7 @@ export type WorkCategory =
   | "Keynotes"
   | "Thought Leadership"
   | "Go To Market"
-  | "AI";
+  | "Projects";
 
 export type Artifact = {
   label: string;

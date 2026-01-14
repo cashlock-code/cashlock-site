@@ -16,7 +16,7 @@ export default function Contact() {
     },
     {
       label: "Bluesky",
-      href: "https://bsky.app/profile/cashlock.bsky.social",
+      href: "https://bsky.app/profile/cashlock.com",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bluesky.svg",
       tint: "rgba(155, 126, 220, 0.10)", // creative
       border: "rgba(155, 126, 220, 0.28)",

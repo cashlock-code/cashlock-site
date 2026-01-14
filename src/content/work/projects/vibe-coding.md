@@ -4,7 +4,7 @@ category: "Projects"
 date: "2025-01-01"
 summary: "Visualize sacles and modes on the fretboard"
 tags: ["AI", "Vibe coding"]
-image: "/project-guitar.png"
+image: "/cashlock-site/project-guitar.png"
 
 results:
   - "Experimenting with vibe coding"

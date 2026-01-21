@@ -4,7 +4,7 @@ category: "Projects"
 date: "2025-09-01"
 summary: "Rank your favorite and least favorite teams"
 tags: ["AI", "Vibe coding"]
-image: "/cashlock-site/project-cfb.png"
+image: "/project-cfb.png"
 
 results:
   - "Experimenting with vibe coding"

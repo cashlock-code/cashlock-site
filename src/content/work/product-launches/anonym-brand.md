@@ -11,6 +11,6 @@ results:
 artifacts:
   - label: "Product site"
     url: "https://www.mozilla.org/en-US/anonym/"
-  - label: "Vertical case study:
+  - label: "Vertical case study"
     url: "https://www.linkedin.com/pulse/more-blind-spots-how-healthcare-marketers-unlock-insights-understand-tyeve/"
 ---
